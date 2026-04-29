@@ -11,7 +11,7 @@
 
 ---
 
-## ☕ קנו לי קפה (Buy Me a Coffee)
+## ☕ ו... לסיום (Buy Me a Coffee)
 הכלי הזה פתוח לכולם בחינם כדי להגדיל תורה ולהאדירה. אם חסכתי לכם עבודה - תנו כוס קפה :)
 
 [![support](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/shtaygen)
