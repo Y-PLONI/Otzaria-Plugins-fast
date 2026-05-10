@@ -70,7 +70,7 @@ your-plugin.otzplugin
 | 🆘 **Wizard למשאבים חסומים** | אם CDN חוסם הורדה דרך CORS — תפתח חלונית שמציעה לך לשמור את הקובץ ידנית ולהעלות אותו. |
 | 📁 **קבצים נוספים** | גרור-ושחרר CSS, JS, TS, `.woff2`, תמונות וכל קובץ סטטי — כולם נארזים ב-root של ה-ZIP. |
 | 🛠️ **עורך קוד מובנה** | textarea סגנון VSCode עם dark theme, טעינת קובץ מקומי, וטעינת תבנית "שלום עולם" מובנית. |
-| 🏷️ **לשונית בתוך האפליקציה** | קביעת שם הלשונית, סדר ההופעה, ו-codepoint לאייקון מתוך ספריית Fluent Icons. |
+| 🏷️ **לשונית בתוך האפליקציה** | קביעת שם הלשונית, סדר ההופעה, ושם אייקון מתוך ספריית FluentUI System Icons (למשל `book_24_regular`). |
 | 📡 **Published Data Types** | תמיכה בתוספים שמפרסמים אירועים לאפליקציה (`calendar.event`, `saved.query`, `note.draft` וכו'). |
 
 ---
@@ -112,10 +112,12 @@ your-plugin.otzplugin
   "stability": "beta",
   "minAppVersion": "0.9.0",
   "main": "index.html",
-  "tab": {
-    "title": "התוסף שלי",
-    "icon": 63742,           // codepoint עשרוני של Fluent Icon
-    "order": 100
+  "contributes": {
+    "toolTab": {
+      "title": "התוסף שלי",
+      "iconName": "book_24_regular",   // שם אייקון FluentUI 24px (regular/filled)
+      "order": 100
+    }
   },
   "permissions": [
     "ui.feedback",
@@ -220,7 +222,7 @@ Otzaria.off('theme.changed', myHandler);
 ```
 
 ### אייקון לתוסף
-שדה `tab.icon` הוא **codepoint עשרוני** של Fluent Icon (Regular בלבד). דוגמה: ב-[fluenticons.co](https://fluenticons.co/) תמצא `U+F8BE` — המר ל-base-10 (`63742`) ושים בשדה.
+שדה `contributes.toolTab.iconName` הוא **שם אייקון** מ-[FluentUI System Icons](https://github.com/microsoft/fluentui-system-icons) בגודל 24px. השם חייב להסתיים ב-`_24_regular` או `_24_filled`. דוגמאות: `book_24_regular`, `calendar_24_filled`, `search_24_regular`. אוצריא פותרת את השם למפת אייקונים סטטית פנימית — מה שמאפשר ל-Flutter לבצע tree-shaking נכון של פונט האייקונים ב-Release. שם שאינו מוכר יוצג כפאזל ברירת מחדל.
 
 ---
 
